@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Suspense fallback={loadingSym}>
         <Switch>
-          <Route path={ROUTES.LOGIN} component={Login} />
+          <Route path="/" component={Login} />
           <Route path={ROUTES.SIGN_UP} component={SignUp} />
         </Switch>
       </Suspense>
