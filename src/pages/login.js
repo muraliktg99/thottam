@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import LoadingBar from '../components/loadingBar';
 import * as ROUTES from '../constants/routes';
 
 function Login() {
@@ -10,6 +10,7 @@ function Login() {
 
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const [error, setError] = useState('');
     const isInvalid = password === '' || emailAddress === '';
@@ -17,18 +18,21 @@ function Login() {
     const handleLogin = async (event) => {
         event.preventDefault();
 
-            await firebase.auth().signInWithEmailAndPassword(emailAddress, password)
+        setLoading(true);
+        await firebase.auth().signInWithEmailAndPassword(emailAddress, password)
             .then((userCredential) => {
                 // Signed in 
                 console.log(userCredential.user);
                 history.push(ROUTES.DASHBOARD);
-                setError('')
-              })
-              .catch((e) => {
+                setError('');
+                setLoading(false);
+            })
+            .catch((e) => {
                 console.log(e.message);
                 setError(e.message);
+                setLoading(false);
                 // ..
-              });
+            });
     };
 
     useEffect(() => {
@@ -41,11 +45,12 @@ function Login() {
                 <img src="/images/social-media.png" className="object-scale-down md:h-100 h-60" alt="Social Media" />
             </div>
             <div className="flex p-3 flex-col md:w-3/5">
+                    {loading && <LoadingBar height={8} />}
                 <div className="bg-white rounded border p-4 border-gray-primary mb-4">
                     <h1 className="flex justify-center w-full">
                         <img src="/images/logo.png" alt="Thottam" className="mt-2 w-6/12 mb-4" />
                     </h1>
-            
+
                     {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
 
                     <form className="m-2" onSubmit={handleLogin} method="POST">
