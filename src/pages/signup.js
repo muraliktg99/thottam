@@ -48,7 +48,7 @@ function SignUp() {
                 })
                 setSuccess('Account Created');
                 setLoading(false);
-                setTimeout(() => {history.push(ROUTES.LOGIN)},2000);
+                setTimeout(() => {history.push(ROUTES.DASHBOARD)},2000);
 
             } catch (e) {
                 setLoading(false);
