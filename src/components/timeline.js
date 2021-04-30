@@ -1,5 +1,7 @@
 export default function TimeLine() {
     return (
-        <h2>Timeline..</h2>
+        <div className="shadow-lg p-5 bg-white rounded mx-5">
+            <h1>Timeline</h1>
+        </div>
     );
 }

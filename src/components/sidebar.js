@@ -1,5 +1,7 @@
 export default function Sidebar() {
     return (
-        <h2>Sidebar..</h2>
+        <div className="shadow-lg p-5 bg-white rounded mx-5">
+            <h1>sidebar</h1>
+        </div>
     );
 }

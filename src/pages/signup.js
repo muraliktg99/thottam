@@ -66,7 +66,7 @@ function SignUp() {
     };
 
     useEffect(() => {
-        document.title = 'Thottam-Login';
+        document.title = 'Thottam-Sign up';
     }, []);
 
     return (
@@ -77,7 +77,7 @@ function SignUp() {
                     {loading && <LoadingBar height={6} />}
                     <div className="p-5">
                         <h1 className="flex justify-center w-full">
-                            <img src="/images/logo.png" alt="Thottam" className="mt-2 w-6/12 mb-4" />
+                            <img src="/images/logo.png" alt="Thottam" className="mt-4 w-4/12 mb-8" />
                         </h1>
                         {success && <p className="mb-4 p-3 text-center bg-green-medium border rounded text-white">{success}</p>}
                         {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
