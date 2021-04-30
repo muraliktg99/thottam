@@ -46,9 +46,9 @@ function Login() {
             </div>
             <div className="flex p-3 flex-col md:w-3/5">
                     {loading && <LoadingBar height={8} />}
-                <div className="bg-white rounded border p-4 border-gray-primary mb-4">
+                <div className="bg-white rounded border p-8 border-gray-primary mb-4">
                     <h1 className="flex justify-center w-full">
-                        <img src="/images/logo.png" alt="Thottam" className="mt-2 w-6/12 mb-4" />
+                        <img src="/images/logo.png" alt="Thottam" className="mt-2 w-4/12 mb-4" />
                     </h1>
 
                     {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
