@@ -10,9 +10,9 @@ function Dashboard() {
     const history = useHistory();
     const { user } = useContext(UserContext);
     useEffect(() => {
-        if(user === null) {
-            history.push(ROUTES.LOGIN);
-        }
+        // if(user === null) {
+        //     history.push(ROUTES.LOGIN);
+        // }
         document.title = "thottam";
     }, []);
     return (
