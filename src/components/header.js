@@ -78,7 +78,16 @@ export default function Header() {
                             (
                                 <>
                                     <Link to={ROUTES.LOGIN} aria-label="Dashboard">
-                                        <button className="bg-blue-medium text-white py-2 px-4 rounded">Sign in</button>
+                                        <button
+                                        className="bg-blue-medium font-bold text-white text-sm w-20 h-9 rounded"
+                                        type="button"
+                                        >Log in</button>
+                                    </Link>
+                                    <Link to={ROUTES.SIGN_UP} aria-label="Dashboard">
+                                        <button
+                                        className="bg-white font-bold text-blue-medium text-sm w-20 h-9 rounded"
+                                        type="button"
+                                        >Sign up</button>
                                     </Link>
                                 </>
                             )}

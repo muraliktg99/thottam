@@ -18,8 +18,8 @@ function Dashboard() {
     return (
         <div className="bg-gray-background">
             <Header />
-            <div className="grid">
-                <TimeLine />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-between max-w-screen-lg mx-auto">
+                <TimeLine className="col-span-3" />
                 <Sidebar />
             </div>
         </div>
