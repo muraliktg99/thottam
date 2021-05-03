@@ -22,7 +22,7 @@ function Login() {
         await firebase.auth().signInWithEmailAndPassword(emailAddress, password)
             .then((userCredential) => {
                 // Signed in 
-                console.log(userCredential.user);
+                //console.log(userCredential.user);
                 history.push(ROUTES.DASHBOARD);
                 setError('');
                 setLoading(false);

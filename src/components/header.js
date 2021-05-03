@@ -8,7 +8,7 @@ export default function Header() {
     const { firebase } = useContext(FirebaseContext);
     const { user } = useContext(UserContext);
 
-    console.log('user', user);
+    //console.log('user', user);
 
     return (
         <header className="bg-white border-b border-gray-primary mb-8 w-100 p-4 shadow-md">
